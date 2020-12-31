@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Search({search, handleSearch}) {
+const Search= ({search, handleSearch}) => {
     return (
         <div className="col-3 mx-auto">
         <div className="form-group">

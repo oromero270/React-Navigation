@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Search from '../components/Search';
 
 function Home() {
     const [name, setName] = useState("");
@@ -7,6 +8,7 @@ function Home() {
     const [numEmployees, setNumEmployees]= useState(0);
     const [imgUrl, setImgUrl] = useState("");
     const [players, setPlayers] =useState([]);
+    const [search, setSearch] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,7 +20,12 @@ function Home() {
         setImgUrl("");
     }
     return (
-        <div className='home'>
+        < >
+        <Search
+                search= {search}
+                handleSearch={setSearch}
+        />
+        <div className='home row justify-contnet-around'>
             <form className="col-5" onSubmit={(e)=> handleSubmit(e)}>
                 <div className="form-group">
                     <label htmlFor="name">Name:</label>
@@ -68,7 +75,7 @@ function Home() {
             </form>
             <div className="col-5">
                 {
-                    players.map((player,idx) =>{
+                    players.filter(h =>h.name.includes(search)).map((player,idx) =>{
                         return  <div className="card" key={idx}>
                                     <img className="card-img-top" src={player.imgUrl} alt="card img"></img>
                                     <div className="card-body">
@@ -82,6 +89,7 @@ function Home() {
             </div>
             
         </div>
+        </>
     )
 }
 
