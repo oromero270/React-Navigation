@@ -1,9 +1,9 @@
-import React from 'react'
-
+import React from 'react';
+import './Products.css'
 function Products() {
     return (
         <div className='products'>
-            <div > <p>Productxxxxs</p> </div>
+            <p>What are you looking for?</p>
         </div>
     )
 }

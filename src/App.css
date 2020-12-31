@@ -5,7 +5,7 @@
 
 }
 
-.home, .reports, .services {
+.home, .products, .services {
   display: flex;
   height: 90vh;
   align-items: center;
